@@ -28,7 +28,6 @@ function Home() {
     }
   };
 
-  console.log(posts);
   return (
     <div>
       <h1 className="text-4xl text-center mt-5">React Movies</h1>
