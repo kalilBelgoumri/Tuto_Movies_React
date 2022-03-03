@@ -1,13 +1,42 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+ul {
+    display: flex;
+}
+
+li {
+    list-style: none;
+    padding: 10px;
+    font-size: 20px;
+}
+
+a.nav-active {
+    background-color: blue;
+    border-radius: 7px;
+    transition: all 0.9s;
+}
+
+a.nav-active :hover {
+    background-color: black;
+    border-radius: 7px;
+    transition: all 0.9s;
+}
+
+.react {
+    text-align: center;
+    margin-top: 10px;
+    padding-bottom: 10px;
+}
+.ant-card-cover img {
+    border-radius : 50px !important;
+}
+
+.ant-card-bordered {
+    border-radius:  50px ! important
 }
