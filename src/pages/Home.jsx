@@ -4,11 +4,14 @@ import Header from "../components/Header";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Formulaire from "../components/Form";
+import { Input } from "antd";
 
 function Home() {
   const [posts, setPosts] = useState([]);
   const [search, setSearch] = useState("code");
   const uniqid = require("uniqid");
+  const { Search } = Input;
+
   const dateFormater = (date) => {
     let [yy, mm, dd] = date.split("-");
     return [dd, mm, yy].join("/");
@@ -30,16 +33,13 @@ function Home() {
       <Header />
       <Formulaire />
       <div className="flex justify-center">
-        <input
-          className="border-2 rounded-md outline outline-offset-2 outline-blue-500"
-          onChange={(e) => setSearch(e.target.value)}
-          type="search"
-          name="Search movie"
-          id="search"
-        />
-        <button className="border-2 rounded-md border-zinc-900" type="submit">
-          Rechercher
-        </button>
+        <div className="w-54">
+          <Search
+            placeholder="input search text"
+            onChange={(e) => setSearch(e.target.value)}
+            enterButton
+          />
+        </div>
       </div>
       <div className="flex justify-center gap-5 flex-wrap px-5  mt-20">
         {posts.slice(0, 12).map((post) => (
