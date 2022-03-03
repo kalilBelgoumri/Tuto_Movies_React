@@ -6,7 +6,7 @@ const CardUsers = ({ image, description, title, alt, ratings, avatar }) => {
   return (
     <Card
       hoverable
-      cover={<img alt={alt} src={`https://image.tmdb.org/t/p/w400/${image}`} />}
+      cover={<img alt={alt} src={`https://image.tmdb.org/t/p/w300/${image}`} />}
     >
       <Meta
         title={title}

@@ -16,17 +16,17 @@ li {
     font-size: 20px;
 }
 
-a.nav-active {
+/* a.nav-active {
     background-color: blue;
     border-radius: 7px;
     transition: all 0.9s;
-}
+} */
 
-a.nav-active :hover {
+/* a.nav-active :hover {
     background-color: black;
     border-radius: 7px;
     transition: all 0.9s;
-}
+} */
 
 .react {
     text-align: center;

@@ -1,6 +1,5 @@
 import React from "react";
 import CardUsers from "../components/Card";
-import Header from "../components/Header";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Formulaire from "../components/Form";
@@ -8,7 +7,7 @@ import { Input } from "antd";
 
 function Home() {
   const [posts, setPosts] = useState([]);
-  const [search, setSearch] = useState("code");
+  const [search, setSearch] = useState("scary");
   const uniqid = require("uniqid");
   const { Search } = Input;
 
@@ -30,7 +29,6 @@ function Home() {
   return (
     <div>
       <h1 className="text-4xl text-center mt-5">React Movies</h1>
-      <Header />
       <Formulaire />
       <div className="flex justify-center">
         <div className="w-54">
