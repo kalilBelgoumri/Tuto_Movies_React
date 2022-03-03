@@ -7,7 +7,7 @@ import Formulaire from "../components/Form";
 
 function Home() {
   const [posts, setPosts] = useState([]);
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState("code");
   const uniqid = require("uniqid");
   const dateFormater = (date) => {
     let [yy, mm, dd] = date.split("-");
@@ -17,7 +17,7 @@ function Home() {
   useEffect(() => {
     axios
       .get(
-        ` https://api.themoviedb.org/3/search/movie?api_key=24516a6f5d7d2a3dc0d5b6d79c4d3f4f&query=${search}`
+        ` https://api.themoviedb.org/3/search/movie?api_key=24516a6f5d7d2a3dc0d5b6d79c4d3f4f&query=${search}&language=fr-FR`
       )
       .then((res) => setPosts(res.data.results))
       .catch((error) => console.log(error));
@@ -29,16 +29,18 @@ function Home() {
       <h1 className="text-4xl text-center mt-5">React Movies</h1>
       <Header />
       <Formulaire />
-      <input
-        className="border-2 rounded-md border-green-700"
-        onChange={(e) => setSearch(e.target.value)}
-        type="search"
-        name="Search movie"
-        id="search"
-      />
-      <button className="border-2 border-zinc-900" type="submit">
-        Rechercher
-      </button>
+      <div className="flex justify-center">
+        <input
+          className="border-2 rounded-md outline outline-offset-2 outline-blue-500"
+          onChange={(e) => setSearch(e.target.value)}
+          type="search"
+          name="Search movie"
+          id="search"
+        />
+        <button className="border-2 rounded-md border-zinc-900" type="submit">
+          Rechercher
+        </button>
+      </div>
       <div className="flex justify-center gap-5 flex-wrap px-5  mt-20">
         {posts.slice(0, 12).map((post) => (
           <div key={uniqid()} className="flex rounded-lg">
