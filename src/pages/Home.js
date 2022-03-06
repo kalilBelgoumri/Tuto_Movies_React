@@ -5,8 +5,6 @@ import axios from "axios";
 import Formulaire from "../components/Form";
 import { Input, Button } from "antd";
 import HeartOutlined from "@ant-design/icons";
-import Usersliste from "./Usersliste";
-
 function Home(item) {
   const [posts, setPosts] = useState([]);
   const [search, setSearch] = useState("scary");
@@ -17,21 +15,10 @@ function Home(item) {
     return [dd, mm, yy].join("/");
   };
 
-  // const AddStorage = () => {
-  //   let storedData = window.localStorage.movies
-  //     ? window.localStorage.movies.split(",")
-  //     : [];
-
-  //   if (!storedData.includes(posts.id.toString())) {
-  //     storedData.push(posts.id);
-  //     window.localStorage.movies = storedData;
-  //   }
-  // };
-
   useEffect(() => {
     axios
       .get(
-        ` https://api.themoviedb.org/3/search/movie?api_key=24516a6f5d7d2a3dc0d5b6d79c4d3f4f&query=${search}&language=fr-FR`
+        ` https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_THE_MOVIES_DB_API_KEY}&query=${search}&language=fr-FR`
       )
       .then((res) => setPosts(res.data.results))
 
