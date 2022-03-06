@@ -7,7 +7,7 @@ import Headers from "./components/Headers";
 import { Layout } from "antd";
 
 function App() {
-  const { Header, Footer, Sider, Content } = Layout;
+  const { Header, Footer, Content } = Layout;
 
   return (
     <BrowserRouter>

@@ -1,7 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
@@ -16,11 +15,13 @@ li {
     font-size: 20px;
 }
 
+
 /* a.nav-active {
     background-color: blue;
     border-radius: 7px;
     transition: all 0.9s;
 } */
+
 
 /* a.nav-active :hover {
     background-color: black;
@@ -33,10 +34,11 @@ li {
     margin-top: 10px;
     padding-bottom: 10px;
 }
+
 .ant-card-cover img {
-    border-radius : 50px !important;
+    border-radius: 50px !important;
 }
 
 .ant-card-bordered {
-    border-radius:  50px ! important
+    border-radius: 50px !important;
 }
