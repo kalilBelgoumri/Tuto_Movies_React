@@ -16,20 +16,22 @@ function Home(item) {
   };
 
   useEffect(() => {
-    axios
-      .get(
-        ` https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_THE_MOVIES_DB_API_KEY}&query=${search}&language=fr-FR`
-      )
-      .then((res) => setPosts(res.data.results))
+    async function fetchData() {
+      await axios
+        .get(
+          ` https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_THE_MOVIES_DB_API_KEY}&query=${search}&language=fr-FR`
+        )
 
-      .catch((error) => console.log(error));
+        .then((res) => setPosts(res.data.results))
+        .catch((error) => console.log(error));
+    }
+    fetchData();
   }, [search]);
 
   const saveLocalStorage = () => {
     window.localStorage.setItem("name", item.id);
   };
 
-  console.log(item);
   return (
     <div>
       <h1 className="text-4xl text-center mt-5">React Movies</h1>
