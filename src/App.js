@@ -5,6 +5,7 @@ import NotFound from "./pages/NotFound";
 import Usersliste from "./pages/Usersliste";
 import Headers from "./components/Headers";
 import { Layout } from "antd";
+import FooterUser from "./components/FooterUser";
 
 function App() {
   const { Header, Footer, Content } = Layout;
@@ -21,8 +22,8 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Content>
-      <Footer>
-        <h1>Footer</h1>
+      <Footer style={{ background: "black", color: "white", height: "20vh" }}>
+        <FooterUser />
       </Footer>
     </BrowserRouter>
   );
