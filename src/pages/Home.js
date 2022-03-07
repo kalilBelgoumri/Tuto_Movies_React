@@ -5,6 +5,7 @@ import axios from "axios";
 import Formulaire from "../components/Form";
 import { Input, Button } from "antd";
 import HeartOutlined from "@ant-design/icons";
+
 function Home(item) {
   const [posts, setPosts] = useState([]);
   const [search, setSearch] = useState("scary");
@@ -32,6 +33,8 @@ function Home(item) {
     window.localStorage.setItem("name", item.id);
   };
 
+  const movie = "../assets/movie.jpg";
+
   return (
     <div>
       <h1 className="text-4xl text-center mt-5">React Movies</h1>
@@ -49,7 +52,11 @@ function Home(item) {
         {posts.slice(0, 22).map((post) => (
           <div key={uniqid()} className="flex rounded-lg">
             <CardUsers
-              image={post.poster_path}
+              image={
+                post.poster_path == null
+                  ? "https://images.unsplash.com/photo-1497514440240-3b870f7341f0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=300&q=80"
+                  : `https://image.tmdb.org/t/p/w300/${post.poster_path}`
+              }
               className="text-center"
               avatar={
                 <Button

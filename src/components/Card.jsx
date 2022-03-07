@@ -4,10 +4,7 @@ const { Meta } = Card;
 
 const CardUsers = ({ image, description, title, alt, ratings, avatar }) => {
   return (
-    <Card
-      hoverable
-      cover={<img alt={alt} src={`https://image.tmdb.org/t/p/w300/${image}`} />}
-    >
+    <Card hoverable cover={<img alt={alt} src={image} />}>
       <Meta
         title={title}
         description={description}
