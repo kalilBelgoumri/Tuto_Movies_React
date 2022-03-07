@@ -48,16 +48,15 @@ function Home(item) {
           />
         </div>
       </div>
-      <div className="flex justify-center gap-5 flex-wrap px-5 mt-20">
+      <div className="flex justify-center  gap-5 flex-wrap px-5 mt-20 mb-20">
         {posts.slice(0, 22).map((post) => (
-          <div key={uniqid()} className="flex rounded-lg">
+          <div key={uniqid()} className="flex rounded-md">
             <CardUsers
               image={
                 post.poster_path == null
-                  ? "https://images.unsplash.com/photo-1497514440240-3b870f7341f0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=300&q=80"
+                  ? "https://images.unsplash.com/photo-1497514440240-3b870f7341f0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=150&q=80"
                   : `https://image.tmdb.org/t/p/w300/${post.poster_path}`
               }
-              className="text-center"
               avatar={
                 <Button
                   onClick={() => saveLocalStorage()}
