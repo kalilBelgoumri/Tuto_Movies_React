@@ -8,7 +8,7 @@ import HeartOutlined from "@ant-design/icons";
 
 function Home(item) {
   const [posts, setPosts] = useState([]);
-  const [search, setSearch] = useState("scary");
+  const [search, setSearch] = useState("movie");
   const uniqid = require("uniqid");
   const { Search } = Input;
   const dateFormater = (date) => {
@@ -48,8 +48,8 @@ function Home(item) {
           />
         </div>
       </div>
-      <div className="flex justify-center  gap-5 flex-wrap px-5 mt-20 mb-20">
-        {posts.slice(0, 22).map((post) => (
+      <div className="flex justify-center gap-5 flex-wrap px-5 mt-20 mb-20">
+        {posts.map((post) => (
           <div key={uniqid()} className="flex rounded-md">
             <CardUsers
               image={
